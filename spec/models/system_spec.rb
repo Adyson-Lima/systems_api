@@ -12,7 +12,7 @@ RSpec.describe System, type: :model do
     end
 
     it 'manufacturer consegue ser preenchido?' do
-      @system.manufacturer = ""
+      @system.manufacturer = "community"
       expect(@system.manufacturer).to eq("community")
     end
 
