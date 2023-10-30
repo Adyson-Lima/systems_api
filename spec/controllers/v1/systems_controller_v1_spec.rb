@@ -39,4 +39,14 @@ RSpec.describe Api::V1::SystemsController, type: :controller do
     end
   end
 
+  describe 'DELETE /api/v1/systems/id' do
+    it 'Consegue apagar um system e retornar 204?' do
+      system = System.last
+      delete :destroy, params: {id: system.id}
+
+      expect(System.all).not_to include_json(system)
+      expect(response).to have_http_status(204)
+    end
+  end
+
 end

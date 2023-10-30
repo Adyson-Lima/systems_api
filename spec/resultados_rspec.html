@@ -287,56 +287,83 @@ a {
 <div id="div_group_2" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_2" class="passed">GET /api/v1/systems</dt>
-    <script type="text/javascript">moveProgressBar('12.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue listar todos os systems e retornar status 200?</span><span class='duration'>0.05803s</span></dd>
+    <script type="text/javascript">moveProgressBar('11.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue listar todos os systems e retornar status 200?</span><span class='duration'>0.05644s</span></dd>
   </dl>
 </div>
 <div id="div_group_3" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_3" class="passed">GET /api/v1/systems/id</dt>
-    <script type="text/javascript">moveProgressBar('25.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue listar um system especifico e retornar status 200?</span><span class='duration'>0.00604s</span></dd>
+    <script type="text/javascript">moveProgressBar('22.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue listar um system especifico e retornar status 200?</span><span class='duration'>0.00610s</span></dd>
   </dl>
 </div>
 <div id="div_group_4" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_4" class="passed">POST /api/v1/systems</dt>
-    <script type="text/javascript">moveProgressBar('37.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue criar um system e retornar status 201?</span><span class='duration'>0.00889s</span></dd>
+    <script type="text/javascript">moveProgressBar('33.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue criar um system e retornar status 201?</span><span class='duration'>0.00903s</span></dd>
   </dl>
 </div>
 <div id="div_group_5" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_5" class="passed">PATCH /api/v1/systems/id</dt>
-    <script type="text/javascript">moveProgressBar('50.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue atualizar um system e retornar status 200?</span><span class='duration'>0.00791s</span></dd>
+    <script type="text/javascript">moveProgressBar('44.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue atualizar um system e retornar status 200?</span><span class='duration'>0.00809s</span></dd>
   </dl>
 </div>
 <div id="div_group_6" class="example_group passed">
-  <dl style="margin-left: 0px;">
-  <dt id="example_group_6" class="passed">System</dt>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_6" class="passed">DELETE /api/v1/systems/id</dt>
+    <script type="text/javascript">makeRed('rspec-header');</script>
+    <script type="text/javascript">makeRed('div_group_6');</script>
+    <script type="text/javascript">makeRed('example_group_6');</script>
+    <script type="text/javascript">moveProgressBar('55.5');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">Consegue apagar um system e retornar 204?</span>
+      <span class="duration">0.00389s</span>
+      <div class="failure" id="failure_1">
+        <div class="message"><pre>  Failure/Error: delete :destroy, params: {id: system.id}
+
+  AbstractController::ActionNotFound:
+    The action &#39;destroy&#39; could not be found for Api::V1::SystemsController
+  # ./spec/controllers/v1/systems_controller_v1_spec.rb:45:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/v1/systems_controller_v1_spec.rb:45:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">43</span>    it 'Consegue apagar um system e retornar 204?' do
+<span class="linenum">44</span>      system = System.last
+<span class="offending"><span class="linenum">45</span>      delete :destroy, params: {id: system.id}</span>
+<span class="linenum">46</span>
+<span class="linenum">47</span>      expect(System.all).not_to include_json(system)
+<span class="linenum">48</span><span class="comment"># Install the coderay gem to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
 <div id="div_group_7" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_7" class="passed">Teste de preenchimento dos campos do model System</dt>
-    <script type="text/javascript">moveProgressBar('62.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">name consegue ser preenchido?</span><span class='duration'>0.00082s</span></dd>
-    <script type="text/javascript">moveProgressBar('75.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">manufacturer consegue ser preenchido?</span><span class='duration'>0.00064s</span></dd>
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_7" class="passed">System</dt>
   </dl>
 </div>
 <div id="div_group_8" class="example_group passed">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_8" class="passed">Teste de validação do model System</dt>
-    <script type="text/javascript">moveProgressBar('87.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">System valido com campos obrigatorios preenchidos?</span><span class='duration'>0.00073s</span></dd>
-    <script type="text/javascript">moveProgressBar('100.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">System invalido com campos obrigatorios não preenchidos?</span><span class='duration'>0.00155s</span></dd>
+  <dt id="example_group_8" class="passed">Teste de preenchimento dos campos do model System</dt>
+    <script type="text/javascript">moveProgressBar('66.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">name consegue ser preenchido?</span><span class='duration'>0.00113s</span></dd>
+    <script type="text/javascript">moveProgressBar('77.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">manufacturer consegue ser preenchido?</span><span class='duration'>0.00109s</span></dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.08892 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "8 examples, 0 failures";</script>
+<div id="div_group_9" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_9" class="passed">Teste de validação do model System</dt>
+    <script type="text/javascript">moveProgressBar('88.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">System valido com campos obrigatorios preenchidos?</span><span class='duration'>0.00118s</span></dd>
+    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">System invalido com campos obrigatorios não preenchidos?</span><span class='duration'>0.00186s</span></dd>
+  </dl>
+</div>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.10394 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "9 examples, 1 failure";</script>
 </div>
 </div>
 </body>
