@@ -11,6 +11,11 @@ RSpec.describe System, type: :model do
       expect(@system.name).to eq("debian")
     end
 
+    it 'manufacturer consegue ser preenchido?' do
+      @system.manufacturer = ""
+      expect(@system.manufacturer).to eq("community")
+    end
+
   end
 
 end
