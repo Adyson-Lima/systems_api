@@ -20,4 +20,13 @@ RSpec.describe Api::V1::SystemsController, type: :controller do
     end
   end
 
+  describe 'POST /api/v1/systems' do
+    it 'Consegue criar um system e retornar status 201?' do
+      post :create, params: {system: {name: "debian", manufacturer: "community"}, format: :json}
+
+      expect(response.body).to include_json(name: "debian")
+      expect(response).to have_http_status(201)
+    end
+  end
+
 end
