@@ -1,10 +1,14 @@
 class Api::V1::SystemsController < ApplicationController
 
-  #before_action :set_system, only: %i[] #show update destroy
+  before_action :set_system, only: %i[ show ] #show update destroy
 
   def index
     @systems = System.all
     render json: @systems
+  end
+
+  def show
+    render json: @system
   end
 
 private
