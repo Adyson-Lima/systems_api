@@ -288,48 +288,28 @@ a {
   <dl style="margin-left: 15px;">
   <dt id="example_group_2" class="passed">GET /api/v1/systems</dt>
     <script type="text/javascript">moveProgressBar('12.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue listar todos os systems e retornar status 200?</span><span class='duration'>0.05544s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">Consegue listar todos os systems e retornar status 200?</span><span class='duration'>0.05803s</span></dd>
   </dl>
 </div>
 <div id="div_group_3" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_3" class="passed">GET /api/v1/systems/id</dt>
     <script type="text/javascript">moveProgressBar('25.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue listar um system especifico e retornar status 200?</span><span class='duration'>0.00603s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">Consegue listar um system especifico e retornar status 200?</span><span class='duration'>0.00604s</span></dd>
   </dl>
 </div>
 <div id="div_group_4" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_4" class="passed">POST /api/v1/systems</dt>
     <script type="text/javascript">moveProgressBar('37.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue criar um system e retornar status 201?</span><span class='duration'>0.00892s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">Consegue criar um system e retornar status 201?</span><span class='duration'>0.00889s</span></dd>
   </dl>
 </div>
 <div id="div_group_5" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_5" class="passed">PATCH /api/v1/systems/id</dt>
-    <script type="text/javascript">makeRed('rspec-header');</script>
-    <script type="text/javascript">makeRed('div_group_5');</script>
-    <script type="text/javascript">makeRed('example_group_5');</script>
     <script type="text/javascript">moveProgressBar('50.0');</script>
-    <dd class="example failed">
-      <span class="failed_spec_name">Consegue atualizar um system e retornar status 200?</span>
-      <span class="duration">0.00506s</span>
-      <div class="failure" id="failure_1">
-        <div class="message"><pre>  Failure/Error: patch :update, params: {system: {name: &quot;ubuntu&quot;, manufacturer: &quot;canonical&quot;},id: system.id}
-
-  AbstractController::ActionNotFound:
-    The action &#39;update&#39; could not be found for Api::V1::SystemsController
-  # ./spec/controllers/v1/systems_controller_v1_spec.rb:35:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
-        <div class="backtrace"><pre>./spec/controllers/v1/systems_controller_v1_spec.rb:35:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
-    <pre class="ruby"><code><span class="linenum">33</span>    it 'Consegue atualizar um system e retornar status 200?' do
-<span class="linenum">34</span>      system = System.last
-<span class="offending"><span class="linenum">35</span>      patch :update, params: {system: {name: "ubuntu", manufacturer: "canonical"},id: system.id}</span>
-<span class="linenum">36</span>
-<span class="linenum">37</span>      expect(response.body).to include_json(name: "ubuntu")
-<span class="linenum">38</span><span class="comment"># Install the coderay gem to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="example passed"><span class="passed_spec_name">Consegue atualizar um system e retornar status 200?</span><span class='duration'>0.00791s</span></dd>
   </dl>
 </div>
 <div id="div_group_6" class="example_group passed">
@@ -341,22 +321,22 @@ a {
   <dl style="margin-left: 15px;">
   <dt id="example_group_7" class="passed">Teste de preenchimento dos campos do model System</dt>
     <script type="text/javascript">moveProgressBar('62.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">name consegue ser preenchido?</span><span class='duration'>0.00097s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">name consegue ser preenchido?</span><span class='duration'>0.00082s</span></dd>
     <script type="text/javascript">moveProgressBar('75.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">manufacturer consegue ser preenchido?</span><span class='duration'>0.00068s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">manufacturer consegue ser preenchido?</span><span class='duration'>0.00064s</span></dd>
   </dl>
 </div>
 <div id="div_group_8" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_8" class="passed">Teste de validação do model System</dt>
     <script type="text/javascript">moveProgressBar('87.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">System valido com campos obrigatorios preenchidos?</span><span class='duration'>0.00077s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">System valido com campos obrigatorios preenchidos?</span><span class='duration'>0.00073s</span></dd>
     <script type="text/javascript">moveProgressBar('100.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">System invalido com campos obrigatorios não preenchidos?</span><span class='duration'>0.00154s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">System invalido com campos obrigatorios não preenchidos?</span><span class='duration'>0.00155s</span></dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.09310 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "8 examples, 1 failure";</script>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.08892 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "8 examples, 0 failures";</script>
 </div>
 </div>
 </body>

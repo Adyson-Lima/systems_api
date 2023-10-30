@@ -1,6 +1,6 @@
 class Api::V1::SystemsController < ApplicationController
 
-  before_action :set_system, only: %i[ show ] #show update destroy
+  before_action :set_system, only: %i[ show update ] #show update destroy
 
   def index
     @systems = System.all
@@ -17,6 +17,14 @@ class Api::V1::SystemsController < ApplicationController
       render json: @system, status: :created, location: api_v1_system_url(@system)
     else
       render json: @system.errors, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    if @system.update(system_params)
+      render json: @system
+    else
+      render json: @system.error, status: :unprocessable_entity
     end
   end
 
