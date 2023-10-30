@@ -27,6 +27,12 @@ RSpec.describe System, type: :model do
       expect(@system).to be_valid
     end
 
+    it 'System invalido com campos obrigatorios não preenchidos?' do
+      system = System.new
+
+      expect(system).to be_valid
+    end
+
   end
 
 end
