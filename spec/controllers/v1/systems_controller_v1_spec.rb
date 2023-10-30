@@ -29,4 +29,14 @@ RSpec.describe Api::V1::SystemsController, type: :controller do
     end
   end
 
+  describe 'PATCH /api/v1/systems/id' do
+    it 'Consegue atualizar um system e retornar status 200?' do
+      system = System.last
+      patch :update, params: {system: {name: "ubuntu", manufacturer: "canonical"},id: system.id}
+
+      expect(response.body).to include_json(name: "ubuntu")
+      expect(response).to have_http_status(200)
+    end
+  end
+
 end
