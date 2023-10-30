@@ -21,8 +21,8 @@ RSpec.describe System, type: :model do
   describe 'Teste de validação do model System' do
 
     it 'System valido com campos obrigatorios preenchidos?' do
-      @system.name = ""
-      @system.manufacturer = ""
+      @system.name = "ubuntu"
+      @system.manufacturer = "canonical"
 
       expect(@system).to be_valid
     end
