@@ -7,7 +7,7 @@ RSpec.describe System, type: :model do
   describe 'Teste de preenchimento dos campos do model System' do
 
     it 'name consegue ser preenchido?' do
-      @system.name = ""
+      @system.name = "debian"
       expect(@system.name).to eq("debian")
     end
 
