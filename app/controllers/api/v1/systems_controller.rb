@@ -11,6 +11,15 @@ class Api::V1::SystemsController < ApplicationController
     render json: @system
   end
 
+  def create
+    @system = System.new(system_params)
+    if @system.save
+      render json: @system, status: :created, location: api_v1_system_url(@system)
+    else
+      render json: @system.errors, status: :unprocessable_entity
+    end
+  end
+
 private
 
 def set_system
