@@ -44,7 +44,7 @@ RSpec.describe Api::V1::SystemsController, type: :controller do
       system = System.last
       delete :destroy, params: {id: system.id}
 
-      expect(System.all).not_to include_json(system)
+      expect(System.all).not_to include(system)
       expect(response).to have_http_status(204)
     end
   end

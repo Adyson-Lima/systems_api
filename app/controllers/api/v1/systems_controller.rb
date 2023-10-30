@@ -1,6 +1,6 @@
 class Api::V1::SystemsController < ApplicationController
 
-  before_action :set_system, only: %i[ show update ] #show update destroy
+  before_action :set_system, only: %i[ show update destroy ] #show update destroy
 
   def index
     @systems = System.all
@@ -26,6 +26,10 @@ class Api::V1::SystemsController < ApplicationController
     else
       render json: @system.error, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @system.destroy!
   end
 
 private
